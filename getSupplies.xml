@@ -1,0 +1,57 @@
+<DecisionTable name="getSupplies">
+  <Declaration>
+    <Define name="Tools" type="object" direction="Out" value="[]" />
+    <Define name="Cost" type="int" direction="Out" value="0" />
+  </Declaration>
+  <Columns>
+    <Condition name="Construction" expression="Project.Construction" />
+    <Condition name="Cleaning" expression="Project.Cleaning" />
+    <Condition name="Lighting" expression="Project.Lighting" />
+    <Action name="Tools" expression="Tools" />
+    <Action name="Cost" expression="Cost" />
+  </Columns>
+  <Data>
+    <Row>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value />
+      <Value>Tools|add("Hammer, Cleaning solution, Gloves")</Value>
+      <Value>+=20</Value>
+    </Row>
+    <Row>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value />
+      <Value>Tools|add("Hammer, Gloves")</Value>
+      <Value>+=15</Value>
+    </Row>
+    <Row>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value />
+      <Value>Tools|add("Cleaning solution, Gloves")</Value>
+      <Value>+= 10</Value>
+    </Row>
+    <Row>
+      <Value />
+      <Value />
+      <Value>"Low"</Value>
+      <Value>Tools|add("Flashlight")</Value>
+      <Value>+=10</Value>
+    </Row>
+    <Row>
+      <Value />
+      <Value />
+      <Value>"Medium"</Value>
+      <Value>Tools|add("Headlamp")</Value>
+      <Value>+=20</Value>
+    </Row>
+    <Row>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value />
+      <Value>Tools|add("Unknown")</Value>
+      <Value />
+    </Row>
+  </Data>
+</DecisionTable>

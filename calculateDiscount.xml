@@ -1,0 +1,21 @@
+<DecisionTable name="calculateDiscount" processAll="False">
+  <Declaration>
+    <Define name="Discounted Price" type="decimal" direction="Out" value="Cost" />
+    <Define name="Cost" type="decimal" direction="InOut" />
+    <Define name="Tools" type="object" direction="InOut" />
+  </Declaration>
+  <Columns>
+    <Condition name="Discount" expression="Discount" />
+    <Action name="Discounted Price" expression="Discounted Price" />
+  </Columns>
+  <Data>
+    <Row>
+      <Value>true</Value>
+      <Value>*0.92</Value>
+    </Row>
+    <Row>
+      <Value>false</Value>
+      <Value />
+    </Row>
+  </Data>
+</DecisionTable>

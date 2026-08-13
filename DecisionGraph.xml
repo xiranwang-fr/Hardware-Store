@@ -1,0 +1,24 @@
+<DRD name="DecisionGraph">
+  <Declaration>
+    <Define name="Tools" type="object" direction="Out" value="[]" />
+    <Define name="Cost" type="decimal" direction="Out" value="0" />
+    <Define name="finalCost" type="decimal" direction="Out" />
+  </Declaration>
+  <Glossary>
+    <GlossarySource uri="Glossary\Concept.xml" />
+  </Glossary>
+  <Nodes>
+    <Decision name="Decision12" uri="getSupplies.xml" contextMode="Shared" type="Table">
+      <Transition name="Transition39" to="Decision38" relationType="Information" />
+    </Decision>
+    <InputData name="Project" isOutput="False" type="project" assembly="Glossary\Concept.xml">
+      <Transition name="Transition14" to="Decision12" relationType="Information" />
+    </InputData>
+    <Decision name="Decision38" expression="doDiscount" return="finalCost">
+      <Param name="Cost" value="Cost" />
+    </Decision>
+    <BusinessKnowledge name="doDiscount" function="True" uri="doDiscount.xml" contextMode="Shared">
+      <Transition name="Transition41" to="Decision38" relationType="Knowledge" />
+    </BusinessKnowledge>
+  </Nodes>
+</DRD>

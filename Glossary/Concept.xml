@@ -1,0 +1,12 @@
+<Concept namespace="Scopes">
+  <Fact name="project">
+    <Property name="Construction" type="bool" />
+    <Property name="Cleaning" type="bool" />
+    <Property name="Lighting" fact="Lighting" />
+  </Fact>
+  <Option name="Lighting">
+    <Property name="Low" />
+    <Property name="Medium" />
+    <Property name="High" />
+  </Option>
+</Concept>

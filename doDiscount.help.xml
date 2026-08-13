@@ -1,0 +1,18 @@
+<BoxedExpression>
+  <Declaration>
+    <Define name="Cost" type="decimal" direction="In" />
+    <Define name="Discount" type="decimal" direction="Out" />
+  </Declaration>
+  <BoxedContext Description="">
+    <BoxedFunction Description="">
+      <BoxedEntry Description="" />
+      <BoxedReturn Description="" />
+    </BoxedFunction>
+    <BoxedIf Description="">
+      <BoxedThen Description="">
+        <BoxedInvocation Description="" />
+      </BoxedThen>
+      <BoxedElse Description="" />
+    </BoxedIf>
+  </BoxedContext>
+</BoxedExpression>

@@ -1,0 +1,10 @@
+<DecisionTable name="test">
+	<Columns>
+		<Condition name="Condition1" expression="" />
+	</Columns>
+	<Data>
+		<Row>
+			<Value/>
+		</Row>
+	</Data>
+</DecisionTable>

@@ -1,0 +1,26 @@
+<BoxedExpression name="doDiscount">
+  <Handlers>
+    <Handler assembly="FlexRule.Extensions.DMN.dll" handler="FlexRule.Extensions.DMN.Flows.Nodes.BoxedExpressionsFactory" />
+  </Handlers>
+  <Declaration>
+    <Define name="Cost" type="decimal" direction="In" />
+    <Define name="Discount" type="decimal" direction="Out" />
+  </Declaration>
+  <BoxedContext>
+    <BoxedFunction name="discount">
+      <Declaration>
+        <Define name="amount" type="decimal" direction="In" />
+      </Declaration>
+      <BoxedEntry name="discounted" value="amount * 0.92" />
+      <BoxedReturn value="discounted" />
+    </BoxedFunction>
+    <BoxedIf value="Cost &gt; 20" return="Discount">
+      <BoxedThen>
+        <BoxedInvocation target="discount">
+          <Param value="Cost" />
+        </BoxedInvocation>
+      </BoxedThen>
+      <BoxedElse value="Cost" />
+    </BoxedIf>
+  </BoxedContext>
+</BoxedExpression>
