@@ -11,7 +11,7 @@
       <Declaration>
         <Define name="amount" type="decimal" direction="In" />
       </Declaration>
-      <BoxedEntry name="discounted" value="amount * 0.75" />
+      <BoxedEntry name="discounted" value="amount * 0.7" />
       <BoxedReturn value="discounted" />
     </BoxedFunction>
     <BoxedIf value="Cost &gt; 20" return="Discount">
